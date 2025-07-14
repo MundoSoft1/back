@@ -7,11 +7,11 @@ import { UpdateImageController } from '../controller/editImageController';
 import { GetAllImagesController } from '../controller/getImagesController';
 import { GetImagesByDateController } from '../controller/getId';
 
-const upload = multer({ dest: 'uploads/' }); // Configura multer para manejar la carga de archivos
+const upload = multer({ dest: 'uploads/' }); 
 
 const router = express.Router();
 
-router.post('/', upload.single('image'), CreateImageController.createImage); // Asegúrate de que 'image' coincida
+router.post('/', upload.single('image'), CreateImageController.createImage); 
 router.delete('/:id', DeleteImageController.deleteImage);
 router.put('/:id', UpdateImageController.updateImage);
 router.get('/', GetAllImagesController.getAllImages);
